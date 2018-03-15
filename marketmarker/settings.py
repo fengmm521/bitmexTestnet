@@ -8,10 +8,13 @@ import logging
 # API URL.
 BASE_URL = "https://testnet.bitmex.com/api/v1/"
 # BASE_URL = "https://www.bitmex.com/api/v1/" # Once you're ready, uncomment this.
-
+kfpth = '../../../btc/bitmex/testNetKey.txt'
 # The BitMEX API requires permanent API keys. Go to https://testnet.bitmex.com/api/apiKeys to fill these out.
-API_KEY = ""
-API_SECRET = ""
+f = open(kfpth,'r')
+lines = f.readlines()
+f.close()
+API_KEY = lines[0].replace('\r','').replace('\n','')
+API_SECRET = lines[1].replace('\r','').replace('\n','')
 
 
 ########################################################################################################################
